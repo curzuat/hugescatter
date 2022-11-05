@@ -1,7 +1,4 @@
 process create_grid {
-  label 'rscript'
-  label 'regular'
-  cpus 8
   echo {params.verbose != null ? true : false}
 
   publishDir "${params.outdir}/", mode: 'copy', saveAs: { filename -> "${params.id}_$filename" }
@@ -18,9 +15,6 @@ process create_grid {
 }
 
 process create_histograms {
-  label 'rscript'
-  label 'regular'
-  cpus 8
   echo {params.verbose != null ? true : false}
 
   publishDir "${params.outdir}/", mode: 'copy', saveAs: { filename -> "${params.id}_$filename" }
